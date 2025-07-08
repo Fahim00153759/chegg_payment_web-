@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chegg Answers - Payment Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h1>📚 Chegg Answer Packages</h1>
+        <div class="package-cards">
+            <div class="package-card" onclick="selectPackage(1)">
+                <h3>1 Answer</h3>
+                <div class="price">5৳</div>
+                <ul>
+                    <li>Instant delivery</li>
+                    <li>24/7 support</li>
+                </ul>
+            </div>
+            
+            <div class="package-card highlight" onclick="selectPackage(3)">
+                <div class="popular-tag">Most Popular</div>
+                <h3>3 Answers</h3>
+                <div class="price">15৳ <span class="discount">(Save 5%)</span></div>
+                <ul>
+                    <li>3 answers at once</li>
+                    <li>Priority support</li>
+                </ul>
+            </div>
+            
+            <div class="package-card" onclick="selectPackage(5)">
+                <h3>5 Answers</h3>
+                <div class="price">20৳ <span class="discount">(Save 20%)</span></div>
+                <ul>
+                    <li>Best value</li>
+                    <li>Bulk discount</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="payment-form" class="hidden">
+            <h2>Complete Payment</h2>
+            <div class="form-group">
+                <label for="telegram-id">Your Telegram ID</label>
+                <input type="text" id="telegram-id" placeholder="@username or 123456789">
+            </div>
+            
+            <div class="payment-methods">
+                <div class="method" onclick="selectMethod('bkash')">
+                    <img src="https://rupantor.com/assets/img/bkash.png" alt="Bkash">
+                </div>
+                <div class="method" onclick="selectMethod('nagad')">
+                    <img src="https://rupantor.com/assets/img/nagad.png" alt="Nagad">
+                </div>
+                <div class="method" onclick="selectMethod('card')">
+                    <img src="https://rupantor.com/assets/img/card.png" alt="Card">
+                </div>
+            </div>
+            
+            <button id="pay-now-btn" onclick="processPayment()">Pay Now via RupantorPay</button>
+        </div>
+        
+        <div id="payment-status"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
